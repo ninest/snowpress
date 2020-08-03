@@ -1,0 +1,36 @@
+{
+  "name": "ns-resources",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "export": "nuxt export",
+    "create-website": "npm run build; npm run export",
+    "start": "nuxt start"
+  },
+  "dependencies": {
+    "@nuxtjs/google-analytics": "^2.3.0",
+    "@nuxtjs/redirect-module": "^0.3.1",
+    "@nuxtjs/sitemap": "^2.4.0",
+    "nuxt": "^2.13.0",
+    "prism-themes": "^1.4.0",
+    "remark-breaks": "^1.0.5",
+    "sass-loader": "^8.0.2",
+    "yaml": "^1.10.0",
+    "yaml-loader": "^0.6.0"
+  },
+  "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@nuxt/content": "^1.4.1",
+    "@nuxt/components": "^1.0.7",
+    "@nuxtjs/fontawesome": "^1.1.2",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "node-sass": "^4.14.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

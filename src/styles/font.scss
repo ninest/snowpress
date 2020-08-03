@@ -1,0 +1,133 @@
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+// used in navbar, footer, almost everywhere actually
+.link-hover {
+  border-radius: var(--b-r);
+  margin: -0.25em -0.6em;
+  padding: 0.25em 0.6em;
+
+  &:hover {
+
+    background-color: var(--link-hover);
+  }
+
+  &.solid {
+    margin: -0.25em -0.6em;
+    padding: 0.25em 0.6em;
+  }
+}
+
+// used in toc
+.link-hover-block {
+  display: block;
+  border-radius: var(--b-r);
+  padding: 0.25em 0.6em;
+  &:hover {
+    background-color: var(--link-hover);
+  }
+
+  &.highlight-active {
+    &.nuxt-link-active {
+      background-color: var(--link-hover-active);
+    }
+  }
+
+  &.highlight-exact-active {
+    &.nuxt-link-exact-active {
+      background-color: var(--link-hover-active);
+    }
+  }
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2em;
+
+  border-bottom: 2px solid var(--title-border);
+}
+
+
+article {
+  a {
+    &:not(.button) {
+      @include link
+    }
+  }
+}
+
+
+// styling for link page
+article.page-links {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      color: unset;
+      text-decoration: unset;
+
+      display: block;
+      width: 100%;
+
+      // margin-left: 1em;
+      // padding: 0.5em;
+      margin: 0.3em;
+      padding: 0.8em;
+
+      font-size: 1.1rem;
+      font-weight: 500;
+
+      &:hover {
+        margin: 0.3em;
+        padding: 0.8em;
+        // background-color: var(--link-hover);
+      }
+    }
+  }
+}
+
+
+// github style table
+table {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+
+  font-size: 0.90em;
+}
+
+table th {
+  font-weight: 600;
+}
+
+table td,
+table th {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+table ~ .alert {
+  background: red;
+}

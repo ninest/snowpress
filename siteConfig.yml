@@ -1,0 +1,43 @@
+name: Snowy
+shortName: Snowy
+description: Documentation site theme
+
+navLinks:
+  - title: Guide
+    url: /guide
+  - title: Examples
+    url: /examples
+
+footerLinks:
+  - title: GitHub
+    url: https://github.com/ninest/snowy
+
+
+sidebar:
+  guide:
+    # main title in sidebar
+    title: Guide
+    root: /guide
+    sections:
+      - links:
+          - title: Introduction
+            slug: /
+          - title: Installation
+            slug: /installation
+
+      - title: Sections
+        links:
+          - title: Adding
+            slug: /section-adding
+          - title: Editing
+            slug: /section-editing
+
+  examples:
+    title: Examples
+    root: /examples
+    sections:
+      - links:
+          - title: Introduction
+            slug: /
+          - title: Adding examples
+            slug: /adding-examples

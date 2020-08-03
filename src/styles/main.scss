@@ -1,0 +1,40 @@
+@import "variables.scss";
+@import "font.scss";
+@import "buttons.scss";
+@import "form.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+  sans-serif;
+  line-height: 1.7;
+  height: 100%;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  background-color: var(--bg);
+  color: var(--text);
+
+  font-size: 17px;
+  @include mobile-screen {
+    font-size: 16px;
+  }
+}
+#__nuxt {
+  height: 100%;
+}
+
+
+// at bottom of articles
+hr {
+  border-left: none;
+  border-top: 1px solid var(--hr);
+  border-radius: 1px;
+}

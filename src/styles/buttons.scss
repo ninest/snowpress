@@ -1,0 +1,61 @@
+@mixin button {
+  border-radius: var(--b-r);
+  padding: 0.8rem 1.6rem;
+  border: none;
+  font-weight: 600;
+
+  line-height: 1.3;
+
+  font-size: 0.9rem;
+  letter-spacing: 0.06rem;
+
+  &:not(.custom-bg) {
+    background-color: var(--button);
+  }
+
+  display: flex;
+  justify-content: center;
+
+  &.dark {
+    color: var(--button-dark);
+  }
+  &.light {
+    color: var(--button-light);
+  }
+
+  // if icons
+  &.icon-l {
+    svg {
+      margin-right: 1rem;
+    }
+  }
+  &.icon-r {
+    svg {
+      margin-left: 1rem;
+    }
+  }
+
+  &.icon-larger {
+    svg {
+      font-size: 1.3em;
+    }
+  }
+
+
+  transition: all 0.1s;
+  &:focus, &:hover {
+    opacity: 0.73;
+    outline: none;
+  }
+}
+
+button {
+  @include button
+}
+
+a {
+  &.button {
+    text-align: center;
+    @include button;
+  }
+}
