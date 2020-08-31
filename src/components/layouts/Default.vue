@@ -4,12 +4,7 @@ export default {
     title: {
       type: String,
       required: false,
-    },
-    sidebarContent: {
-      type: Object,
-      required: false,
-      default: () => {}
-    },
+    }
   },
 }
 </script>
@@ -19,7 +14,7 @@ export default {
     <main>
 
       <aside class="">
-        <Sidebar :sidebarContent="sidebarContent"></Sidebar>
+        <Sidebar></Sidebar>
       </aside>
 
       <div class="content">
@@ -52,8 +47,8 @@ main {
     // sidebar open and closeable for mobile
     @include mobile-screen {
       z-index: 100;
-      transition: 2s all;
-      left: calc(-1 * var(--sidebar-width));
+      transition: 0.2s all;
+      // left: calc(-1 * var(--sidebar-width));
       &.open { left:0 }
     }
   }

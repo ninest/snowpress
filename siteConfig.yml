@@ -14,8 +14,8 @@ footerLinks:
 
 
 sidebar:
+  
   guide:
-    # main title in sidebar
     title: Guide
     root: /guide
     sections:
@@ -41,3 +41,46 @@ sidebar:
             slug: /
           - title: Adding examples
             slug: /adding-examples
+      - title: Another
+        links:
+          - title: Section
+            slug: /lolg
+          - title: More
+            slug: /more
+      - title: Yet
+        links:
+          - title: Blah blah
+            slug: /lolg
+          - title: Lorem
+            slug: /more
+          - title: Section
+            slug: /lolg
+          - title: Hilo
+            slug: /more
+          - title: Lorem
+            slug: /more
+          - title: Section
+            slug: /lolg
+          - title: Hilo
+            slug: /more
+      - title: Existence
+        links:
+          - title: Is overrated
+            slug: /lolg
+          - title: Nope
+            slug: /more
+          - title: Section
+            slug: /lolg
+          - title: Yes plus one
+            slug: /more
+          - title: Lorem
+            slug: /more
+          - title: Section
+            slug: /lolg
+          - title: Hilo
+            slug: /more
+      - title: Choolest
+        links:
+          - title: Last
+            slug: /last
+          

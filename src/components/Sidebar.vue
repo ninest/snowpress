@@ -1,20 +1,32 @@
 <script>
 export default {
   props: {
-    // sidebarContent: {
-    //   type: Object,
-    //   default: () => {}
-    // },
   },
   data() {
     return {
       cat: null,
-      sidebarContent: null
+      sidebarContent: null,
+      isHome: false,
     }
   },
   created() {
-    this.cat = this.$route.params.cat
+    // if there's not cat, it means we're at the root, so show the home links
+    this.cat = this.$route.params.cat ?? "home"
+    this.isHome = this.cat == "home"
+
+    // find the link sections for that category
     this.sidebarContent = this.siteConfig.sidebar[this.cat]
+
+
+    if (!process.server) {
+      // Scroll title into view
+      // for (const title of document.querySelectorAll('.title')) {
+      //   if (title.textContent.includes("Choolest")) {
+      //     console.log(title)
+      //     title.scrollIntoView()
+      //   }
+      // }
+    }
   }
 }
 </script>
@@ -31,22 +43,22 @@ export default {
       class="nav"
     >
       <nuxt-link 
-        v-for="link in siteConfig.navLinks" v-bind:key="link.url"
+        v-for="link in siteConfig.navLinks" :key="link.url"
         :to="link.url" 
-        class="link-hover-block highlight-active"
+        class="link-hover-block"
       >{{ link.title }}</nuxt-link>
     </section>
 
-    <section class="links">
+    <section v-if="!isHome" class="links">
       <div 
-        v-for="section in sidebarContent.sections" v-bind:key="Math.random()"
+        v-for="section in sidebarContent.sections" :key="Math.random()"
         class="section"
       >
         <div class="title">
           {{ section.title }} {{section.root }}
         </div>
         <nuxt-link
-          v-for="link in section.links" v-bind:key="link.slug"
+          v-for="link in section.links" :key="link.slug + Math.random()"
           :to="'/' + cat + link.slug"
           class="link-hover-block highlight-exact-active"
         >

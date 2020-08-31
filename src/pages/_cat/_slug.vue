@@ -5,11 +5,8 @@ export default {
     const slug = params.slug ? params.slug : 'index';
     const doc = await $content(cat, slug).fetch()
 
-    const sidebarContent = (await $content('sidebar').fetch())[cat]
-
     return {
       doc,
-      sidebarContent
     }
   }
 }
@@ -18,7 +15,6 @@ export default {
 <template>
   <Default
     :title="doc.title"
-    :sidebarContent="sidebarContent"
   >
     <article>
       <nuxt-content :document="doc"></nuxt-content>
