@@ -34,7 +34,7 @@ export default {
 <template>
   <div class="sidebar">
     <section class="top">
-      <nuxt-link to="/">
+      <nuxt-link to="/" class="logo">
         {{ siteConfig.name }} Docs
       </nuxt-link>
     </section>
@@ -72,7 +72,8 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar {
-  background-color: var(--bg);
+  // border and background color are set in Default.vue
+
   > section {
     padding: 1em 1.2em;
   }
@@ -80,12 +81,8 @@ export default {
   .top {
     position: sticky;
     top: 0;
-    font-weight: 700;
-    font-size: 1.2rem;
-
-    background-color: var(--bg);
+    
     background-color: var(--bg-sidebar);
-
     border-bottom: 1px solid var(--border);
   }
 
