@@ -20,7 +20,7 @@ module.exports = {
       },
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
 
       // INTER UI font
       {
@@ -45,21 +45,21 @@ module.exports = {
   buildModules: [
     "@nuxt/components",
     "@nuxtjs/fontawesome",
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-161514707-1'
-    }]
+    ["@nuxtjs/google-analytics", {
+      id: "UA-161514707-1",
+    }],
   ],
   components: true,
   modules: [
     "@nuxt/content",
     "@nuxtjs/style-resources",
-    '@nuxtjs/sitemap',
-    '@nuxtjs/redirect-module'
+    "@nuxtjs/sitemap",
+    "@nuxtjs/redirect-module",
   ],
   // rewrites
   redirect: [
-    { from: '/general/(.*)$', to: '/$1' },
-    { from: '/bmt/(.*)$', to: '/basic-military-training' },
+    { from: "/general/(.*)$", to: "/$1" },
+    { from: "/bmt/(.*)$", to: "/basic-military-training" },
   ],
 
   // import screen size mixin in all components
@@ -69,52 +69,48 @@ module.exports = {
       "styles/mixins.scss",
     ],
   },
-  // nuxt content 
+  // nuxt content
   content: {
     markdown: {
-      remarkPlugins: ['remark-breaks']
-    }
+      remarkPlugins: ["remark-breaks"],
+    },
   },
 
   sitemap: {
-    hostname: 'https://national-service.now.sh/',
+    hostname: "https://national-service.now.sh/",
     routes: async () => {
-      const { $content } = require('@nuxt/content')
-      const articles = await $content('articles').fetch()
-      
-      let feed = ['/', '/add/']
+      const { $content } = require("@nuxt/content");
+      const articles = await $content("articles").fetch();
+
+      let feed = ["/", "/add/"];
       articles.forEach((art) => {
-        feed.push(`/${art.slug}/`)
-      })
-      return feed
-    }
+        feed.push(`/${art.slug}/`);
+      });
+      return feed;
+    },
   },
 
   fontawesome: {
-    component: 'fa',
+    component: "fa",
     suffix: true,
     icons: {
       solid: [
-        'faArrowRight',
-        'faRandom',
-        'faPlus',
-        'faPen'
+        "faArrowRight",
+        "faBars",
       ],
-      brands: [
-        'faDiscord'
-      ]
-    }
+      brands: [],
+    },
   },
   build: {
-    extend (config, ctx) {
+    extend(config, ctx) {
       config.module.rules.push(
         // YAML loader
         {
           test: /\.ya?ml$/,
-          type: 'json',
-          use: 'yaml-loader'
-        }
-      )
-    }
+          type: "json",
+          use: "yaml-loader",
+        },
+      );
+    },
   },
-}
+};

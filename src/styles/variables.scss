@@ -1,5 +1,5 @@
 :root {
-  --side-p: 15%;
+  --side-p: 13%;
   @include mobile-screen {
     --side-p: 5%;
   }
@@ -8,11 +8,11 @@
   --b-r: 0.4em;
 
   //
-  --sidebar-width: 320px;
+  --sidebar-width: 20rem;
+  --nav-height: 3.5rem;
 
   // a tags
   --link: #0000be;
-
 
   // colors
   --white-1: #fefefe;
@@ -46,12 +46,8 @@
   --link-hover-active: var(--white-3);
 
   // used in sidebarborder
-  --border: var(--white-2);  
+  --border: var(--white-2);
 }
-
-
-
-
 
 // all colors
 :root {

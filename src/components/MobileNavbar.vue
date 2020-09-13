@@ -1,37 +1,43 @@
 <script>
-import { mapMutations, mapGetters } from 'vuex'
+import { mapMutations, mapGetters } from "vuex";
 
 export default {
   computed: {
     ...mapGetters({
-      sidebarOpen: 'sidebar/open'
-    })
+      sidebarOpen: "sidebar/open",
+    }),
   },
   methods: {
     ...mapMutations({
-      toggle: 'sidebar/toggle'
-    })
-  }
-}
+      toggle: "sidebar/toggle",
+    }),
+  },
+};
 </script>
 
 <template>
   <div class="mobile-nav">
-    <div class="logo">
-      {{ siteConfig.name }} Docs
-    </div>
+    <nuxt-link to="/" class="logo">{{ siteConfig.name }} Docs</nuxt-link>
 
-    <div @click="toggle" class="hamburger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line last"></div>
+    <nav>
+      <ul>
+        <li v-for="link in siteConfig.navLinks" v-bind:key="link.url">
+          <nuxt-link :to="link.url" class="link-hover">{{ link.title}}</nuxt-link>
+        </li>
+      </ul>
+    </nav>
+
+    <div @click="toggle" class="hamburger link-hover">
+      <fa-icon :icon="['fas', 'bars']" />
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .mobile-nav {
-  padding: 1em var(--side-p);
+  font-size: 0.9rem;
+  height: 100%;
+  padding: 1em 1.5em;
   background-color: var(--bg-sidebar);
   border-bottom: 1px solid var(--border);
 
@@ -39,24 +45,34 @@ export default {
   align-items: center;
   justify-content: space-between;
 
+  nav {
+    @include mobile-screen {
+      display: none;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+
+      li {
+        font-weight: 600;
+        color: var(--nav-link);
+      }
+      li + li {
+        margin-left: 2em;
+        @include mobile-screen {
+          margin-left: 1.4em;
+        }
+      }
+
+      margin-right: 1rem;
+    }
+  }
 
   .hamburger {
-    .line {
-      background-color: var(--text);
-      width: 25px;
-      height: 3px;
-
-      border-radius: 10px;
-
-      &.last {
-        // shorter than the rest, float to the left
-        margin-left:auto; 
-        margin-right:0;
-        width: 18px;
-      }
-    }
-    .line + .line {
-      margin-top: 3px;
+    @include not-mobile-screen {
+      display: none;
     }
   }
 }

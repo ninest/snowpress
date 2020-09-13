@@ -12,9 +12,7 @@ footerLinks:
   - title: GitHub
     url: https://github.com/ninest/snowy
 
-
 sidebar:
-  
   guide:
     title: Guide
     root: /guide
@@ -83,4 +81,27 @@ sidebar:
         links:
           - title: Last
             slug: /last
-          
+      - title: Choolest
+        links:
+          - title: Last
+            slug: /last
+      - title: Choolest
+        links:
+          - title: Last
+            slug: /last
+      - title: Choolest
+        links:
+          - title: Last
+            slug: /last
+      - title: Choolest
+        links:
+          - title: Last
+            slug: /last
+      - title: Choolest
+        links:
+          - title: Last
+            slug: /last
+      - title: Choolest
+        links:
+          - title: Last
+            slug: /last

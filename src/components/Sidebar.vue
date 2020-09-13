@@ -1,22 +1,20 @@
 <script>
 export default {
-  props: {
-  },
+  props: {},
   data() {
     return {
       cat: null,
       sidebarContent: null,
       isHome: false,
-    }
+    };
   },
   created() {
     // if there's not cat, it means we're at the root, so show the home links
-    this.cat = this.$route.params.cat ?? "home"
-    this.isHome = this.cat == "home"
+    this.cat = this.$route.params.cat ?? "home";
+    this.isHome = this.cat == "home";
 
     // find the link sections for that category
-    this.sidebarContent = this.siteConfig.sidebar[this.cat]
-
+    this.sidebarContent = this.siteConfig.sidebar[this.cat];
 
     if (!process.server) {
       // Scroll title into view
@@ -27,66 +25,56 @@ export default {
       //   }
       // }
     }
-  }
-}
+  },
+};
 </script>
 
 <template>
   <div class="sidebar">
-    <section class="top">
-      <nuxt-link to="/" class="logo">
-        {{ siteConfig.name }} Docs
-      </nuxt-link>
-    </section>
-
-    <section
-      class="nav"
-    >
-      <nuxt-link 
-        v-for="link in siteConfig.navLinks" :key="link.url"
-        :to="link.url" 
+    <section class="nav">
+      <nuxt-link
+        v-for="link in siteConfig.navLinks"
+        :key="link.url"
+        :to="link.url"
         class="link-hover-block"
       >{{ link.title }}</nuxt-link>
     </section>
 
     <section v-if="!isHome" class="links">
-      <div 
-        v-for="section in sidebarContent.sections" :key="Math.random()"
+      <div
+        v-for="section in sidebarContent.sections"
+        v-bind:key="section.root + Math.random().toString()"
         class="section"
       >
-        <div class="title">
-          {{ section.title }} {{section.root }}
-        </div>
+        <div class="title">{{ section.title }} {{section.root }}</div>
         <nuxt-link
-          v-for="link in section.links" :key="link.slug + Math.random()"
+          v-for="link in section.links"
+          :key="link.slug + Math.random()"
           :to="'/' + cat + link.slug"
           class="link-hover-block highlight-exact-active"
-        >
-          {{ link.title }}
-        </nuxt-link>
+        >{{ link.title }}</nuxt-link>
       </div>
     </section>
-
   </div>
 </template>
 
 <style lang="scss" scoped>
 .sidebar {
-  // border and background color are set in Default.vue
+  height: 100%;
+  font-size: 0.9rem;
+  background-color: var(--bg);
+  border-right: 1px solid var(--border);
 
   > section {
-    padding: 1em 1.2em;
-  }
-
-  .top {
-    position: sticky;
-    top: 0;
-    
-    background-color: var(--bg-sidebar);
-    border-bottom: 1px solid var(--border);
+    padding: 1em 1.5em;
   }
 
   .nav {
+    // only required on mobile layout
+    display: none;
+    @include mobile-screen {
+      display: block;
+    }
     border-bottom: 1px solid var(--border);
   }
 
