@@ -87,5 +87,9 @@ main.content {
   @include mobile-screen {
     margin-left: 0;
   }
+
+  h1.page-title {
+    margin-top: 0;
+  }
 }
 </style>

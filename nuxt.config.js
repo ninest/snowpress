@@ -100,6 +100,13 @@ module.exports = {
       ],
       brands: [],
     },
+  }, // nuxt content config
+  content: {
+    markdown: {
+      prism: {
+        theme: "prism-themes/themes/prism-material-oceanic.css",
+      },
+    },
   },
   build: {
     extend(config, ctx) {

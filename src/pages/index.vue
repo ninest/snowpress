@@ -7,6 +7,19 @@ export default {
       doc,
     };
   },
+  head() {
+    return {
+      title: `${this.doc.title}`,
+      titleTemplate: "%s",
+      meta: [
+        // {
+        //   hid: "description",
+        //   name: "description",
+        //   content: `${this.doc.description}`,
+        // },
+      ],
+    };
+  },
 };
 </script>
 
@@ -17,3 +30,6 @@ export default {
     </article>
   </Default>
 </template>
+
+<style lang="scss" scoped>
+</style>

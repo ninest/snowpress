@@ -1,0 +1,27 @@
+// code blocks
+code {
+  font-size: 0.9em;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
+    Courier New, monospace, serif;
+}
+p {
+  code {
+    // styling for inline code
+    color: var(--inline-code);
+    background-color: #eeeeee;
+    margin: -0.2em -0.1em;
+    padding: 0.2em 0.3em;
+  }
+}
+pre,
+code {
+  border-radius: 0.2em;
+  background-color: unset;
+
+}
+pre {
+  overflow-x: hidden;
+  // @include mobile-screen {
+  //   margin: 1em;
+  // }
+}

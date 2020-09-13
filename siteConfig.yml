@@ -1,6 +1,7 @@
-name: Snowy
-shortName: Snowy
+name: Snowpress
+shortName: Snowpress
 description: Documentation site theme
+github: https://github.com/ninest/snowpress
 
 navLinks:
   - title: Guide
@@ -10,7 +11,7 @@ navLinks:
 
 footerLinks:
   - title: GitHub
-    url: https://github.com/ninest/snowy
+    url: https://github.com/ninest/snowpress
 
 sidebar:
   guide:
@@ -23,12 +24,12 @@ sidebar:
           - title: Installation
             slug: /installation
 
-      - title: Sections
+      - title: Navbar
         links:
-          - title: Adding
-            slug: /section-adding
-          - title: Editing
-            slug: /section-editing
+          - title: Links
+            slug: /navbar-links
+          - title: GitHub
+            slug: /navbar-github
 
   examples:
     title: Examples
@@ -39,69 +40,3 @@ sidebar:
             slug: /
           - title: Adding examples
             slug: /adding-examples
-      - title: Another
-        links:
-          - title: Section
-            slug: /lolg
-          - title: More
-            slug: /more
-      - title: Yet
-        links:
-          - title: Blah blah
-            slug: /lolg
-          - title: Lorem
-            slug: /more
-          - title: Section
-            slug: /lolg
-          - title: Hilo
-            slug: /more
-          - title: Lorem
-            slug: /more
-          - title: Section
-            slug: /lolg
-          - title: Hilo
-            slug: /more
-      - title: Existence
-        links:
-          - title: Is overrated
-            slug: /lolg
-          - title: Nope
-            slug: /more
-          - title: Section
-            slug: /lolg
-          - title: Yes plus one
-            slug: /more
-          - title: Lorem
-            slug: /more
-          - title: Section
-            slug: /lolg
-          - title: Hilo
-            slug: /more
-      - title: Choolest
-        links:
-          - title: Last
-            slug: /last
-      - title: Choolest
-        links:
-          - title: Last
-            slug: /last
-      - title: Choolest
-        links:
-          - title: Last
-            slug: /last
-      - title: Choolest
-        links:
-          - title: Last
-            slug: /last
-      - title: Choolest
-        links:
-          - title: Last
-            slug: /last
-      - title: Choolest
-        links:
-          - title: Last
-            slug: /last
-      - title: Choolest
-        links:
-          - title: Last
-            slug: /last

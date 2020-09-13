@@ -24,6 +24,9 @@ export default {
         <li v-for="link in siteConfig.navLinks" v-bind:key="link.url">
           <nuxt-link :to="link.url" class="link-hover">{{ link.title}}</nuxt-link>
         </li>
+        <li>
+          <a :href="siteConfig.github" target="_blank" class="link-hover">GitHub</a>
+        </li>
       </ul>
     </nav>
 

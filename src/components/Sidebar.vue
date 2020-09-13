@@ -38,6 +38,7 @@ export default {
         :to="link.url"
         class="link-hover-block"
       >{{ link.title }}</nuxt-link>
+      <a :href="siteConfig.github" target="_blank" class="link-hover-block">GitHub</a>
     </section>
 
     <section v-if="!isHome" class="links">
