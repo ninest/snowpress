@@ -7,14 +7,14 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "export": "nuxt export",
-    "create-website": "npm run build; npm run export",
+    "create-website": "nuxt generate",
     "start": "nuxt start"
   },
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.3.0",
     "@nuxtjs/redirect-module": "^0.3.1",
     "@nuxtjs/sitemap": "^2.4.0",
-    "nuxt": "^2.13.0",
+    "nuxt": "^2.14.1",
     "prism-themes": "^1.4.0",
     "remark-breaks": "^1.0.5",
     "sass-loader": "^8.0.2",

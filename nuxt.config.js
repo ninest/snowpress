@@ -45,9 +45,12 @@ module.exports = {
   buildModules: [
     "@nuxt/components",
     "@nuxtjs/fontawesome",
-    ["@nuxtjs/google-analytics", {
-      id: "UA-161514707-1",
-    }],
+    [
+      "@nuxtjs/google-analytics",
+      {
+        id: "UA-161514707-1",
+      },
+    ],
   ],
   components: true,
   modules: [
@@ -64,10 +67,7 @@ module.exports = {
 
   // import screen size mixin in all components
   styleResources: {
-    scss: [
-      "styles/screen.scss",
-      "styles/mixins.scss",
-    ],
+    scss: ["styles/screen.scss", "styles/mixins.scss"],
   },
   // nuxt content
   content: {
@@ -78,26 +78,22 @@ module.exports = {
 
   sitemap: {
     hostname: "https://national-service.now.sh/",
-    routes: async () => {
-      const { $content } = require("@nuxt/content");
-      const articles = await $content("articles").fetch();
-
-      let feed = ["/", "/add/"];
-      articles.forEach((art) => {
-        feed.push(`/${art.slug}/`);
-      });
-      return feed;
-    },
+    // routes: async () => {
+    //   const { $content } = require("@nuxt/content");
+    //   const articles = await $content("articles").fetch();
+    //   let feed = ["/", "/add/"];
+    //   articles.forEach((art) => {
+    //     feed.push(`/${art.slug}/`);
+    //   });
+    //   return feed;
+    // },
   },
 
   fontawesome: {
     component: "fa",
     suffix: true,
     icons: {
-      solid: [
-        "faArrowRight",
-        "faBars",
-      ],
+      solid: ["faArrowRight", "faBars"],
       brands: [],
     },
   }, // nuxt content config
@@ -116,7 +112,7 @@ module.exports = {
           test: /\.ya?ml$/,
           type: "json",
           use: "yaml-loader",
-        },
+        }
       );
     },
   },
