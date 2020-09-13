@@ -27,12 +27,16 @@ export default {
         <MobileNavbar></MobileNavbar>
       </nav>
 
-      <aside class="sidebar" :class="{ open: sidebarOpen, disabled: !sidebarPresent }">
+      <aside
+        class="sidebar"
+        :class="{ open: sidebarOpen, disabled: !sidebarPresent }"
+      >
         <Sidebar></Sidebar>
       </aside>
 
-      <main class="content" :class="{'no-sidebar': !sidebarPresent}">
+      <main class="content" :class="{ 'no-sidebar': !sidebarPresent }">
         <h1 v-if="this.title" class="page-title">{{ this.title }}</h1>
+        <!-- {{ sidebarOpen }} -->
         <slot></slot>
       </main>
     </Base>
@@ -67,9 +71,10 @@ aside.sidebar {
       left: calc(-1 * var(--sidebar-width));
     }
   }
-
-  &.disabled {
-    display: none;
+  @include not-mobile-screen {
+    &.disabled {
+      display: none;
+    }
   }
 }
 
