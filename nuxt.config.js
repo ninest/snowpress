@@ -47,9 +47,9 @@ module.exports = {
     "@nuxtjs/fontawesome",
     [
       "@nuxtjs/google-analytics",
-      {
-        id: "UA-161514707-1",
-      },
+      // {
+      //   id: "TODO",
+      // },
     ],
   ],
   components: true,
@@ -57,13 +57,8 @@ module.exports = {
     "@nuxt/content",
     "@nuxtjs/style-resources",
     "@nuxtjs/sitemap",
-    "@nuxtjs/redirect-module",
   ],
-  // rewrites
-  redirect: [
-    { from: "/general/(.*)$", to: "/$1" },
-    { from: "/bmt/(.*)$", to: "/basic-military-training" },
-  ],
+
 
   // import screen size mixin in all components
   styleResources: {
@@ -112,7 +107,7 @@ module.exports = {
           test: /\.ya?ml$/,
           type: "json",
           use: "yaml-loader",
-        }
+        },
       );
     },
   },
