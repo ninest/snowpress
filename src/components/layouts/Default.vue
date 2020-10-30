@@ -16,6 +16,12 @@ export default {
     ...mapGetters({
       sidebarOpen: "sidebar/open",
     }),
+    time() {
+      return new Date();
+    },
+  },
+  created() {
+    console.log("layouts/default.vue created");
   },
 };
 </script>
@@ -25,8 +31,7 @@ export default {
     <Base>
       <nav>
         <MobileNavbar></MobileNavbar>
-      </nav>
-
+      </nav>      
       <aside
         class="sidebar"
         :class="{ open: sidebarOpen, disabled: !sidebarPresent }"
@@ -67,8 +72,11 @@ aside.sidebar {
   transition: 0.2s all;
 
   @include mobile-screen {
+    // closed by default
+    left: calc(-1 * var(--sidebar-width));
+
     &.open {
-      left: calc(-1 * var(--sidebar-width));
+      left: 0
     }
   }
   @include not-mobile-screen {

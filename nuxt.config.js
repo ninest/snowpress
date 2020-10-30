@@ -72,7 +72,7 @@ module.exports = {
   },
 
   sitemap: {
-    hostname: "https://national-service.now.sh/",
+    hostname: "https://snowpress.now.sh/",
     // routes: async () => {
     //   const { $content } = require("@nuxt/content");
     //   const articles = await $content("articles").fetch();

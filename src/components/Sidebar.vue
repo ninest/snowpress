@@ -16,15 +16,6 @@ export default {
     // find the link sections for that category
     this.sidebarContent = this.siteConfig.sidebar[this.cat];
 
-    if (!process.server) {
-      // Scroll title into view
-      // for (const title of document.querySelectorAll('.title')) {
-      //   if (title.textContent.includes("Choolest")) {
-      //     console.log(title)
-      //     title.scrollIntoView()
-      //   }
-      // }
-    }
   },
 };
 </script>
@@ -62,7 +53,7 @@ export default {
 <style lang="scss" scoped>
 .sidebar {
   height: 100%;
-  font-size: 0.9rem;
+  // font-size: 0.9rem;
   background-color: var(--bg);
   border-right: 1px solid var(--border);
 
@@ -84,6 +75,10 @@ export default {
       .title {
         font-weight: 600;
         margin-bottom: 0.2em;
+      }
+
+      a {
+        margin-bottom: 0.3rem;
       }
     }
     .section + .section {
